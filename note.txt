@@ -1,0 +1,57 @@
+1. generateWorkoutSplit()
+This function is responsible for gathering user inputs, validating them, and calling the necessary functions to generate the workout plan and create a downloadable CSV file.
+
+Breakdown:
+Get Input Values:
+
+days, hours, and goal are fetched from the respective input fields (<input> and <select> elements) using document.getElementById().value.
+Get Selected Days:
+
+We use document.querySelectorAll('input[name="workoutDays"]:checked') to get all the checkboxes that have been checked (i.e., the days the user wants to work out). These are stored in the selectedDays array.
+Validate Input:
+
+The function checks if the number of selected days matches the number the user entered in the "How many days per week can you work out?" field. If they don’t match, it alerts the user and stops execution using return;.
+Generate Workout Plan:
+
+The function calls suggestSplit() with the gathered inputs (days, hours, goal, and selectedDays) and stores the result (HTML table) in result.
+Display the Result:
+
+The resulting workout table is inserted into the HTML element with id="result" using document.getElementById('result').innerHTML = result;.
+Create CSV Data:
+
+The createCSV(result) function is called to convert the table into CSV format. The CSV data is stored in csvContent.
+Create Download Button:
+
+A <a> tag is created as a download button, where the href is set to the CSV data (data:text/csv...). The download attribute defines the name of the file, and the button is appended to the result area.
+2. suggestSplit()
+This function is where the workout plan is generated based on the user's input. It returns an HTML table containing the workout schedule.
+
+Breakdown:
+Initialize Table:
+
+We start by creating an HTML table structure with the header row (<th> for "Day" and "Workout").
+Generate Plan Based on Input:
+
+Different combinations of days, hours, and goal trigger different workout plans. For example:
+If the user selected build muscle, days === 1, and hours === 1, the plan will suggest a full-body workout.
+The selected days from selectedDays[] are inserted into the table dynamically using template literals (${selectedDays[0]}).
+The else conditions are for more generic plans when specific conditions aren't met.
+Return HTML Table:
+
+After generating the workout plan, the function appends the closing </table> tag and returns the HTML string for the table.
+3. createCSV()
+This function converts the HTML table into a CSV format, so it can be downloaded.
+
+Breakdown:
+Extract Rows:
+The match() method with the regex /tr>(.*?)<\/tr>/g is used to extract all table rows (<tr> elements).
+Clean and Split Data:
+For each row, replace() is used to remove the HTML tags (<tr>, <td>, <th>). The row is then split into columns using .split('</td><td>'), and the columns are joined with commas to form a CSV row.
+Join Rows:
+The rows are joined with newline characters \n to form the complete CSV string, which is returned.
+Summary of Key Concepts:
+Input Handling: Use document.getElementById() and document.querySelectorAll() to gather user input.
+Validation: Ensure input matches expectations before proceeding (e.g., number of selected days matches the user's input).
+Dynamic HTML Generation: Use template literals to dynamically create HTML content based on user input.
+CSV Conversion: Convert HTML tables to CSV format for easy download using basic string manipulation.
+This modular approach allows you to easily add or modify the functionality as needed. If you want to further customize the workout plans, it's as simple as adjusting the logic in the suggestSplit() function!

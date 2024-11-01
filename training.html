@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+
+<head>
+    <!--Website Header-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Connection to stylehseet-->
+    <link href="src/css/style.css" rel="stylesheet">
+
+    <title>MTN</title>
+    <meta name="description" content="test Site">
+</head>
+<!-- header, logo and nav -->
+
+<body>
+    <div class="headline">
+        <h2>Personal Online coaching?</h2>
+        <a href="coaching.html" class="button">click here</a>
+    </div>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="src/pictures/Logo_Light.png" alt="logo"></a>
+        <a href="https://www.instagram.com/bigboymax__04/" target="_blank" class="follow_button"><img src="src/pictures/icons8-instagram(1).svg" alt="instagram_icon" height="35px"></a>
+        <nav class="site_nav">
+            <ul>
+                <li><a href="index.html" >Main</a></li>
+                <li><a href="training.html" class="current">Training</a> </li>
+                <li><a href="nutrition.html">Nutrition</a> </li>
+                <li><a href="about_me.html">About Me</a> </li>
+                <li><a href="maybe_you.html">Maybe You</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header, logo and nav end -->
+
+    <!-- content -->
+    <div class="content_list">
+        <div>
+            <h1>Training</h1>
+        </div>
+        <ul>
+            <li><a href="#effects">Effects of Working out</a></li>
+            <li><a href="#why_work_out">Why should i work out?</a></li>
+            <li><a href="#recommended">Recommended Amount</a></li>
+            <li><a href="#workout_plan_configurator">Workout Plan Configurator</a></li>
+        </ul>
+    </div>
+
+    <main class="content_main">
+        <article class="content_main_t" id="effects">
+            <h2>Effects of Working out</h2>
+            <p>Weightlifting has a great effect on physical and mental health. <br>
+                It can increases your Muscle mass, strength and endurance, also boosts your metabolism. <br>
+                Weightlifting can also increase bone density which will reduce the risk of osteoporosis and strengthens 
+                connective tissue like tendons and ligaments, which lowers the chance of injury and prevents some suffering in the future. <br>
+                Additionally, it can positively impact cardiovascular health by improving circulation and lower your blood pressure. <br>
+                Beyond the physical benefits, weightlifting can also significantly improve your mental health. <br>
+                Either from letting out your deepest frustration or just enjoying to get better and better with time and seeing to what your body is capable. <br>
+                It can also help with one's discipline and keep a routine.
+                Overall weightlifting is a safe approach if you seek to improve your physical and or mental health.
+            </p>
+        </article>
+        <article class="content_main_t" id="why_work_out">
+            <h2>Why should i work out?</h2>
+            <p>Regular exercise is essential for maintaining overall health and well-being. Working out strengthens your
+                cardiovascular system, improves muscle tone, and boosts your metabolism, making it easier to manage your
+                weight. Regular physical activity can reduce the risk of chronic diseases such as heart disease,
+                diabetes, and certain cancers. <br> Exercise also improves flexibility, balance, and coordination, which can
+                enhance your quality of life and reduce the risk of injury. Additionally, a consistent workout routine
+                supports better sleep, increases energy levels, and helps you maintain a healthy weight, contributing to
+                a longer, healthier life.
+                Beyond the physical benefits, working out is also crucial for mental health. Exercise releases
+                endorphins, the body's natural mood elevators, which help reduce stress, anxiety, and depression. It
+                also promotes better cognitive function, enhancing memory and concentration. Engaging in regular
+                physical activity can improve self-esteem and body image, providing a sense of accomplishment and
+                boosting confidence. Moreover, the routine and discipline developed through regular workouts can lead to
+                better stress management and a more positive outlook on life. In essence, working out is not just about
+                physical fitness; it's a powerful tool for achieving mental and emotional well-being as well. </p>
+        </article>
+        <article class="content_main_t" id="recommended">
+            <h2>Recommendations</h2>
+            <table>
+                <tr>
+                    <th>Experience</th>
+                    <th>Frequency</th>
+                    <th>Split</th>
+                </tr>
+                <tr>
+                    <td>Untrained</td>
+                    <td>2 to 3 Times</td>
+                    <td>Full body or Upper / Lower</td>
+                </tr>
+                <tr>
+                    <td>Novice</td>
+                    <td>3 to 5 Times</td>
+                    <td>Push, Pull, Legs</td>
+                </tr>
+                <tr>
+                    <td>Intermediate</td>
+                    <td>3 to 5 Times</td>
+                    <td>*PPL + Arms</td>
+                </tr>
+                <tr>
+                    <td>Advanced</td>
+                    <td>4 to 5 Times</td>
+                    <td>Arnold or Alternated PPL</td>    
+                </tr>
+                <tr>
+                    <td>Elite</td>
+                    <td>You wouldnt listen at that point</td>
+                    <td>Whatever your Experience has taught you</td>
+                </tr>
+            </table>
+            <p>*PPL = Push Pull Legs</p>
+            <h3>How do i know whats for me? / What is the most effective?</h3>
+            <p>Whatever keeps you enjoying your workouts and let you recover is the best
+            </p>
+            <div class="workout_table" id="wo_table">
+                <table>
+                    <tbody>
+                        <tr onclick="SelectRow(event,'wo_table')">
+                            <th>Workout Split</th>
+                            <td>
+                                <div class="select">
+                                <select onchange="select_Workout(this.value)" id="select_split">
+                                    <option value="select_split"> < Select > </option>
+                                    <option value="PPL">PPL</option>
+                                    <option value="Full Body">Full Body</option>
+                                    <option value="Upper/Lower">Upper/Lower</option>
+                                    <option value="Max_Split">Max's Split</option>
+                                </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- workout tables -->
+             <div class="workout_table" id="ppl_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Workout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Day 1</td>
+                            <td>Push</td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>Pull</td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>Legs</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+
+             <div class="workout_table" id="fullbody_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Workout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Day 1</td>
+                            <td>Full Body Workout</td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>Rest</td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>Full Body Workout</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+
+             <div class="workout_table" id="upperlower_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Workout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Day 1</td>
+                            <td>Upperbody</td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>Lower Body</td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>Rest</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+
+             <div class="workout_table" id="Max_Split">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Workout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Day 1</td>
+                            <td>Chest/Tri</td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>Back/Bi</td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>Shoulders</td>
+                        </tr>
+                        <tr>
+                            <td>Day 4</td>
+                            <td>Legs</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+        </article>
+        <!-- Workout Plan Configurator -->
+        <article id="workout_plan_configurator">
+            <div class="content_main_t">
+                <h2>Workout Plan Configurator</h2>
+                <form id="workout_form">
+                    <label for="hours">How many Hours can you spare for your workouts?</label>
+                    <select name="hours" id="hours">
+                        <option value="1">1</option>
+                        <option value="1-2">1 to 2</option>
+                        <option value="idc">i dont care</option>
+                    </select> 
+                    <br>
+        
+                    <label for="goal">What is your primary goal?</label>
+                    <select name="goal" id="goal">
+                        <option value="build muscle">Build Muscle</option>
+                        <option value="lose weight">Lose Weight</option>
+                        <option value="general fitness">General Fitness</option>
+                    </select>
+        
+                    <label>Select the days you want to work out:</label>
+                    <div>
+                        <input type="checkbox" id="monday" name="workoutDays" value="Monday"> Monday<br>
+                        <input type="checkbox" id="tuesday" name="workoutDays" value="Tuesday"> Tuesday<br>
+                        <input type="checkbox" id="wednesday" name="workoutDays" value="Wednesday"> Wednesday<br>
+                        <input type="checkbox" id="thursday" name="workoutDays" value="Thursday"> Thursday<br>
+                        <input type="checkbox" id="friday" name="workoutDays" value="Friday"> Friday<br>
+                        <input type="checkbox" id="saturday" name="workoutDays" value="Saturday"> Saturday<br>
+                        <input type="checkbox" id="sunday" name="workoutDays" value="Sunday"> Sunday<br>
+                    </div>
+        
+                    <button type="button" onclick="generateWorkoutSplit()">Get My Split</button>
+                    <div id="result"></div>
+                </form>
+            </div>
+        </article>
+        
+    </main>
+    <!-- content end -->
+
+    <!-- footer -->
+    <footer class="site_footer">
+        <div>
+            <ul>
+                <li><strong>Program</strong></li>
+                <li><a href="#workout_plan_configurator">Workout Plans</a></li>
+                <li><a href="#">Nutrition Plans</a></li>
+                <li><a href="coaching.html">Personal coaching</a></li>
+            </ul>   
+        </div>
+    </footer>
+    <script src="src/jss/training.js"></script>
+</body>
+
+</html>

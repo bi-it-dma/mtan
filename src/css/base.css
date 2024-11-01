@@ -1,0 +1,29 @@
+/* base.css */
+
+/* general */
+*{
+    box-sizing: border-box;
+}
+html,
+body{
+    overflow-x: hidden;
+    font-size: 17px;
+}
+html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+}
+body {
+    font-family: 'roboto', 'sans-serif';
+    margin: auto;
+    line-height: 1.5rem;
+    color: #333;
+}
+.site_nav,
+.site_footer{
+    background-color: #f5f5f5;
+}
+h1{
+    padding: 1rem;
+    font-size: 1.2em;
+}

@@ -163,9 +163,18 @@ th, td{
 /* configurator-form */
 .workout-config{
     display: flex;
+    flex-wrap: wrap;
+    flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
+/* #workoutform{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 .weekday-selector{
     margin: 0.25rem auto;
 }

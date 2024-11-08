@@ -1,33 +1,64 @@
-// Function that auto selects <select> on split view on load
-window.onload = function() {
-    // Set the select element to the default value
-    document.getElementById('select_split').value = 'select_split';
-    // Hide all workout tables when the page reloads
-    document.getElementById('ppl_table').style.display = 'none';
-    document.getElementById('fullbody_table').style.display = 'none';
-    document.getElementById('upperlower_table').style.display = 'none';
-    document.getElementById('Max_Split').style.display = 'none';
+let pop_splits = {
+    "PPL": ['"Push" = Chest, Shoulders, Triceps,' ,'"Pull" = Back, Biceps', "Legs"],
+    "Arnold": ["Chest, Back, Abs", "Shoulders, Arms, Abs", "Legs, Calfs, Abs" ],
+    "Fullbody": ["Fullbody"],
+    "Upper/Lower": ["Upper A", "Lower A", "Upper B", "Lower B"]
 };
 
-// Function for only showing the selected split
-function select_Workout(value) {
-    // Hide all workout tables
-    document.getElementById('ppl_table').style.display = 'none';
-    document.getElementById('fullbody_table').style.display = 'none';
-    document.getElementById('upperlower_table').style.display = 'none';
-    document.getElementById('Max_Split').style.display = 'none';
+function populateTable() {
+const table = document.getElementById("example-splits");
 
-    // Show selected table
-    if (value === 'PPL') {
-        document.getElementById('ppl_table').style.display = 'block';
-    } else if (value === 'Full Body') {
-        document.getElementById('fullbody_table').style.display = 'block';
-    } else if (value === 'Upper/Lower') {
-        document.getElementById('upperlower_table').style.display = 'block';
-    } else if (value === 'Max_Split') {
-        document.getElementById('Max_Split').style.display = 'block';
+    // Define template with pre-filled rest days (this assumes the 7 columns for each day)
+    const template = [
+        ["", "", "", "Rest", "", "", ""],
+        ["", "", "", "", "", "", "Rest"],
+        ["","Rest", "", "Rest", "", "Rest", "Rest"],
+        ["", "", "Rest", "Rest", "", "", ""]
+    ];
+    // Table header row
+    table.innerHTML = `
+        <tr>
+            <th>Plan</th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+        </tr>
+    `;
+
+    // Populate each workout split with the template for rest days
+    let splitIndex = 0;
+    for (let split in pop_splits) {
+        // Create a new row for each split
+        let row = table.insertRow();
+        let cell = row.insertCell();
+        cell.innerText = split;
+
+        // Get the workout days for the split
+        let dayPlans = pop_splits[split];
+        let workoutIndex = 0;
+
+        for (let i = 0; i < 7; i++) {
+            let dayCell = row.insertCell();
+            if (template[splitIndex][i] === "Rest") {
+                dayCell.innerText = "Rest";
+            } else {
+                // Fill with workout day and loop back to the start of the workout days if needed
+                dayCell.innerText = dayPlans[workoutIndex % dayPlans.length];
+                workoutIndex++;
+            }
+        }
+
+        splitIndex++;
     }
 }
+
+// Call the function to populate on page load or button click
+populateTable();
+
 
 // Workout Plan Generator
 // gathering user inputs

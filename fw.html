@@ -7,6 +7,7 @@
 
         <!--Connection to stylehseet-->
         <link href="src/css/style.css" rel="stylesheet">
+        <link href="src/css/fw.css" rel="stylesheet">
 
         <title>MTN</title>
         <meta name="description" content="test Site">
@@ -19,32 +20,34 @@
                 <a href="https://www.instagram.com/bigboymax__04/" target="_blank" class="follow_button"><img src="src/pictures/icons8-instagram.svg" alt="instagram_icon" height="35px"></a>
                 <nav class="site_nav">
                     <ul>
-                        <li><a href="index.html" class="current">Main</a></li>
+                        <li><a href="index.html">Main</a></li>
                         <li><a href="training.html">Training</a> </li>
                         <li><a href="nutrition.html">Nutrition</a> </li>
                         <li><a href="about_me.html">About Me</a> </li>
                         <li><a href="maybe_you.html">Maybe You</a> </li>
-                        <li><a href="fw.html">Fachwoche</a> </li>
+                        <li><a href="fw.html" class="current">Fachwoche</a> </li>
                     </ul>
                 </nav>
             </header>
             <!-- header, logo and nav end -->
             <!-- content -->
-            <div class="content main fw">
+            <div class="content main" id="fw">
                 <section class="fw">
                     <button type="button" id="btn1">click on me for date and time</button>
                 </section>
+
                 <section class="fw">
                     <div class="dropdown">
-                    <h2>dropdown menu</h2>
-                    <button onclick="dropdown()" class="dropbtn">dropdown</button>
+                    <h2>Dropdown Menu</h2>
+                    <button onclick="dropdown()" class="dropbtn">Dropdown</button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="index.html">home</a>
                         <a href="training.html">training</a>
                         <a href="nutrition.html">nutrition</a>
                     </div>
                 </section>
-                <section class="fw">
+
+                <section>
                     <table id="calcu">
                         <tr> 
                             <td colspan="3"><input type="text" id="result"></td> 
@@ -93,6 +96,20 @@
                                         onkeydown="calculator(event)"> </td> 
                         </tr> 
                     </table> 
+                </section>
+
+                <section id="btn-game">
+                    <div>
+                        <button type="button" onclick="generateField()" id="btn0">start game</button>
+                    </div>
+                    
+                    <form>
+                        <div id="grid-container"></div>
+                    </form>
+                    <div>
+                        <p id="time">Time: 0s</p>
+                        <p id="score">Score: 0</p>
+                    </div>
                 </section>
             </div>    
             <!-- content end -->

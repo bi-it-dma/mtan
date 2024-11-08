@@ -1,0 +1,115 @@
+/* fachwoche */
+.fw {
+    margin: 2rem 0;
+}
+#fw{
+    background-color: rgba(168, 166, 166, 0.753);
+}
+.content#fw{
+    width: 40%;
+}
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus{
+    background-color: #2980b9;
+}
+
+/* dropdown container */
+.dropdown{
+    position: relative;
+    display: inline-block;
+    background-color: #000000;
+}
+
+/* dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+  z-index: 1;
+}
+
+/* links inside dropdown */
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown h2{
+    color: rgb(215, 212, 212);
+}
+
+.dropdown a:hover {background-color: #ddd;}
+/* show dropdown menu with js */
+.show {display: block;}
+
+/* calculator */
+table#calcu { 
+    border: 1px solid black; 
+    margin: 0 auto;
+    background-color: #5d1f8f;
+    height: 10rem;
+}
+ 
+
+input[type="button"] { 
+    width: 100%; 
+    padding: 20px 40px; 
+    background-color: rgb(0, 0, 0); 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+} 
+
+input[type="text"] { 
+    padding: 20px 30px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/* form button game */
+#btn-game {
+    width: 40%;
+    height: 40%;
+    margin: 2rem auto;
+    border: 2px solid #000;
+}
+
+#btn0{
+    margin: 0 35% 0.5rem;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.gridButton {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid #000;
+    background-color: lightgray;
+}
+
+.highlighted {
+    background-color: yellow;
+}

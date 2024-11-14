@@ -143,3 +143,26 @@ window.onclick = function(event) {
         highlightedButtonIndex = -1;
     }
     
+
+//fachwoche 3.3
+
+//Aufgabe 1
+//load new content after submitting name
+document.getElementById("nameForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    // Get the name value
+    const name = document.getElementById("name").value;
+
+    // Hide the form section
+    document.getElementById("name-form-f").style.display = "none";
+
+    // Create a request to the PHP file
+    fetch("fw.php?name=" + encodeURIComponent(name))
+        .then(response => response.text())
+        .then(data => {
+            // Insert the response into the content div
+            document.getElementById("new-content").innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+});

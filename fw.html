@@ -32,86 +32,107 @@
             <!-- header, logo and nav end -->
             <!-- content -->
             <div class="content main" id="fw">
-                <section class="fw">
-                    <button type="button" id="btn1">click on me for date and time</button>
-                </section>
+                <!-- fachwoche 3.2 -->
+                <button type="button" class="collapse">Fachwoche 3.2</button>
+                <div class="collapsed-field">
+                    <section class="fw">
+                        <button type="button" id="btn1">click on me for date and time</button>
+                    </section>
 
-                <section class="fw">
-                    <div class="dropdown">
-                    <h2>Dropdown Menu</h2>
-                    <button onclick="dropdown()" class="dropbtn">Dropdown</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="index.html">home</a>
-                        <a href="training.html">training</a>
-                        <a href="nutrition.html">nutrition</a>
-                    </div>
-                </section>
+                    <section class="fw">
+                        <div class="dropdown">
+                        <h2>Dropdown Menu</h2>
+                        <button onclick="dropdown()" class="dropbtn">Dropdown</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="index.html">home</a>
+                            <a href="training.html">training</a>
+                            <a href="nutrition.html">nutrition</a>
+                        </div>
+                    </section>
 
-                <section>
-                    <table id="calcu">
-                        <tr> 
-                            <td colspan="3"><input type="text" id="result"></td> 
-                            <td><input type="button" value="c" onclick="clr()" /> </td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="button" value="1" onclick="dis('1')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="2" onclick="dis('2')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="3" onclick="dis('3')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="/" onclick="dis('/')"
-                                        onkeydown="calculator(event)"> </td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="button" value="4" onclick="dis('4')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="5" onclick="dis('5')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="6" onclick="dis('6')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="*" onclick="dis('*')"
-                                        onkeydown="calculator(event)"> </td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="button" value="7" onclick="dis('7')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="8" onclick="dis('8')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="9" onclick="dis('9')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="-" onclick="dis('-')"
-                                        onkeydown="calculator(event)"> </td> 
-                        </tr> 
-                        <tr> 
-                            <td><input type="button" value="0" onclick="dis('0')"
-                                        onkeydown="calculator(event)"> </td> 
-                            <td><input type="button" value="." onclick="dis('.')"
-                                        onkeydown="calculator(event)"> </td> 
-                            
-                            <!-- solve function call function solve to evaluate value -->
-                            <td><input type="button" value="=" onclick="solve()"> </td> 
+                    <section>
+                        <table id="calcu">
+                            <tr> 
+                                <td colspan="3"><input type="text" id="result"></td> 
+                                <td><input type="button" value="c" onclick="clr()" /> </td> 
+                            </tr> 
+                            <tr> 
+                                <td><input type="button" value="1" onclick="dis('1')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="2" onclick="dis('2')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="3" onclick="dis('3')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="/" onclick="dis('/')"
+                                            onkeydown="calculator(event)"> </td> 
+                            </tr> 
+                            <tr> 
+                                <td><input type="button" value="4" onclick="dis('4')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="5" onclick="dis('5')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="6" onclick="dis('6')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="*" onclick="dis('*')"
+                                            onkeydown="calculator(event)"> </td> 
+                            </tr> 
+                            <tr> 
+                                <td><input type="button" value="7" onclick="dis('7')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="8" onclick="dis('8')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="9" onclick="dis('9')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="-" onclick="dis('-')"
+                                            onkeydown="calculator(event)"> </td> 
+                            </tr> 
+                            <tr> 
+                                <td><input type="button" value="0" onclick="dis('0')"
+                                            onkeydown="calculator(event)"> </td> 
+                                <td><input type="button" value="." onclick="dis('.')"
+                                            onkeydown="calculator(event)"> </td> 
+                                
+                                <!-- solve function call function solve to evaluate value -->
+                                <td><input type="button" value="=" onclick="solve()"> </td> 
+                      
+                                <td><input type="button" value="+" onclick="dis('+')"
+                                            onkeydown="calculator(event)"> </td> 
+                            </tr> 
+                        </table> 
+                    </section>
+
+                    <section id="btn-game">
+                        <div>
+                            <button type="button" onclick="generateField()" id="btn0">start game</button>
+                        </div>
+                        
+                        <form>
+                            <div id="grid-container"></div>
+                        </form>
+                        <div>
+                            <p id="time">Time: 0s</p>
+                            <p id="score">Score: 0</p>
+                        </div>
+                    </section>
+                </div>
+                <!-- /fachwoche 3.2 -->
+
+                <!-- fachwoche 3.3 -->
+                <button type="button" class="collapse">Fachwoche 3.3</button>
+                <div class="collapsed-field">
+                    <section class="fw" id="name-form-f">
+                        <h3>Hello, please enter a name to continue</h3>
+                        <form action="baller.php" method="get" class="form-container" id="nameForm">
+                            <label for="name">Please enter your name:</label>
+                            <input type="text" name="name" id="name">
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </section>
+                    <div id="new-content"></div>
+                </div>
+            </div>
+            
                   
-                            <td><input type="button" value="+" onclick="dis('+')"
-                                        onkeydown="calculator(event)"> </td> 
-                        </tr> 
-                    </table> 
-                </section>
-
-                <section id="btn-game">
-                    <div>
-                        <button type="button" onclick="generateField()" id="btn0">start game</button>
-                    </div>
-                    
-                    <form>
-                        <div id="grid-container"></div>
-                    </form>
-                    <div>
-                        <p id="time">Time: 0s</p>
-                        <p id="score">Score: 0</p>
-                    </div>
-                </section>
-            </div>    
             <!-- content end -->
              <!-- footer -->
             <footer class="site_footer">
@@ -126,6 +147,7 @@
             </footer>
         </div>
         <script src="src/jss/fw.js"></script>
+        <script src="src/jss/gener-utils.js"></script>
 </body>
 
 </html>

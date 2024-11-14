@@ -247,6 +247,12 @@ label#days{
     overflow: hidden;
     background-color: #f1f1f1;
   }
+.collapsed-field{
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
 /* invisible for jss */
 #ppl_table,
 #fullbody_table,

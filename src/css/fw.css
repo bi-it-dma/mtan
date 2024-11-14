@@ -1,10 +1,19 @@
 /* fachwoche */
 .fw {
     margin: 2rem 0;
+    
 }
 #fw{
-    background-color: rgba(168, 166, 166, 0.753);
+    flex-basis: 50%;
+    background-color: #f1f1f1;
 }
+section.fw{
+    flex-basis: 50%;
+    flex: 0 0 50%;
+    overflow: hidden;
+    flex-direction: row;
+}
+
 .content#fw{
     width: 40%;
 }
@@ -60,7 +69,8 @@ table#calcu {
     border: 1px solid black; 
     margin: 0 auto;
     background-color: #5d1f8f;
-    height: 10rem;
+    max-height: 6rem;
+    width: 80%;
 }
  
 
@@ -112,4 +122,137 @@ input[type="text"] {
 
 .highlighted {
     background-color: yellow;
+}
+
+/* fw 3.3 */
+/* aufgabe 1 */
+.fw input{
+    max-height: fit-content;
+    width: 15rem;
+    max-width: fit-content;
+}
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    width: 280px;
+  }
+
+  /* The popup form - hidden by default */
+.form-popup {
+    display: block;
+    position: relative;
+    border: 3px solid #f1f1f1;
+    margin: 1rem;
+    z-index: 9;
+  }
+
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  /* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+  /* aufgabe 2 */
+  html#boll,
+  body#boll{
+    background-color: rgb(134, 128, 128);
+    background-image: none;
+  }
+.new-content{
+  display: flex;
+  align-items: center;
+}
+.ball{
+  letter-spacing: 0px;
+  line-height: 2rem;
+}
+.ball h2{
+  font-size: 2rem;
+}
+#ball-pic{
+  width: 25%;
+  align-self: center;
+}
+/* aufgabe 3 */
+form#fw3 input{
+  width: 100%;
+  padding: 12px;
+  margin: 5rem 0 10px;
+  overflow: visible;
+  font-size: 1rem;
+}
+form#fw input[type=submit]{
+  background-color: #04AA6D;
+  color: white;
+  margin: 0rem;
+}
+h3.valid{
+  color: #04AA6D;
+}
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10004;";
+}
+h3.invalid{
+  color: red;
+}
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10006;";
+}
+
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+#message li {
+  padding: 10px 35px;
+  font-size: 18px;
 }

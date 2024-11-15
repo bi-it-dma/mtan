@@ -227,21 +227,19 @@ form#fw input[type=submit]{
   color: white;
   margin: 0rem;
 }
-h3.valid{
+.valid{
   color: #04AA6D;
 }
 .valid:before {
   position: relative;
   left: -35px;
-  content: "&#10004;";
 }
-h3.invalid{
+.invalid{
   color: red;
 }
 .invalid:before {
   position: relative;
   left: -35px;
-  content: "&#10006;";
 }
 
 #message {

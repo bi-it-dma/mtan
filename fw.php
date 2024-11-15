@@ -38,6 +38,10 @@
                 <h3>Or rather validate your password?</h3>
                 <a href="validator.php">Yeaahh</a>
             </section>
+            <section class="fw">
+                <h3>Data Bank test</h3>
+                <a href="datathing.php">Click me pls</a>
+            </section>
         </div>
     </body>
 </html>

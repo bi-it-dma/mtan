@@ -40,7 +40,7 @@
             </section>
             <section class="fw">
                 <h3>Data Bank test</h3>
-                <a href="datathing.php">Click me pls</a>
+                <a href="db-con.php">Click me pls</a>
             </section>
         </div>
     </body>

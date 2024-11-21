@@ -55,7 +55,7 @@
             $message =  "Most likely.\n";
             break;
           case 7:
-            $message =  "Outlook good.\n";
+            $message =  "I think so.\n";
             break;
           case 8:
             $message =  "Yes.\n";
@@ -64,7 +64,7 @@
             $message =  "Signs point to yes.\n";
             break;
           case 10:
-            $message =  "Reply hazy, try again.\n";
+            $message =  "im not sure, ask again.\n";
             break;
           case 11:
             $message =  "Ask again later.\n";
@@ -88,7 +88,7 @@
             $message =  "My sources say no.\n";
             break;
           case 18:
-            $message =  "Outlook not so good.\n";
+            $message =  "I dont think so.\n";
             break;
           case 19:
             $message =  "Very doubtful.\n";

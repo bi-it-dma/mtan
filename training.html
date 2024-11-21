@@ -51,6 +51,7 @@
                     <div class="collapsed-txt">
                         <p>It can: </p> 
                         <ul id="sect1">
+                            <p>(Physical-effects)</p>
                             <li>Increase your Muscle mass.</li>
                             <li>Increase strength and endurance.</li>
                             <li>Boost your metabolism.</li>
@@ -64,6 +65,7 @@
                                 a longer, healthier life.</li>
                         </ul>
                         <ul id="sect2">
+                            <p>(Mental-effects)</p>
                             <li>Exercise releases Endorphins, the Body's natural Mood elevators, which help reduce stress, anxiety, and depression.</li>
                             <li>Emotional balancing by either acting as an Outlet of Frustrations or you could just simply enjoy yourself.</li>
                             <li>See for yourself what you're capable of.</li>
@@ -75,7 +77,6 @@
                                 better stress management and a more positive outlook on life. In essence, working out is not just about
                                 physical fitness; it's a powerful tool for achieving mental and emotional well-being as well.</li>
                         </ul>
-                        <p>*Green stands for physical- and purple for mental-effects</p>
                     </div>
             </article>
 
@@ -89,15 +90,14 @@
                 </p>
                 <div id="table-head">
                     <h3>Here are a few popular splits</h3>
-                    <h4>(just to give you an idea)</h4>
+                    <h4>(just to give you an idea)*</h4>
                 </div>
                 <table id="example-splits">
                     <!-- inserted via js -->
                 </table>
                 <p>*These are just examples and can look differently depending on your chosen Frequency and preference</p>
                 <h3>How do i know whats for me? / What is the most effective?</h3>
-                <p>Whatever keeps you enjoying your workouts and let you recover is the best
-                </p>
+                <p>Whatever keeps you enjoying your workouts and lets you recover is the best.</p>
             </article>
             <!-- Workout Plan Configurator -->
             <article id="workout_plan_configurator">
@@ -106,22 +106,10 @@
                     <form id="workout_form">
                         <!-- workout day selection -->
                         <label id="days">Select the days you want to work out:</label>
-                        <div class="weekday-selector">
-                            <input type="checkbox" id="monday" name="workoutDays" value="Monday" class="weekday">
-                            <label for="monday">Mon</label>
-                            <input type="checkbox" id="tuesday" name="workoutDays" value="Tuesday" class="weekday">
-                            <label for="tuesday">Tue</label>
-                            <input type="checkbox" id="wednesday" name="workoutDays" value="Wednesday" class="weekday">
-                            <label for="wednesday">Wed</label>
-                            <input type="checkbox" id="thursday" name="workoutDays" value="Thursday" class="weekday">
-                            <label for="thursday">Thu</label>
-                            <input type="checkbox" id="friday" name="workoutDays" value="Friday" class="weekday">
-                            <label for="friday">Fri</label>
-                            <input type="checkbox" id="saturday" name="workoutDays" value="Saturday" class="weekday">
-                            <label for="saturday">Sat</label>
-                            <input type="checkbox" id="sunday" name="workoutDays" value="Sunday" class="weekday">
-                            <label for="sunday">Sun</label>
+                        <div id="weekday-selector" class="weekday-selector">
+                           <!-- added via js -->
                         </div>
+                        <button id="toggle-view">Switch to Month View</button> <br>
 
                         <!-- split preference -->
                         <label for="split-preference">What Split do you prefer?</label>
@@ -130,23 +118,10 @@
                                 <option value="PPL">PPL</option>
                                 <option value="Arnold">Arnold</option>
                                 <option value="Upper/Lower">Upper/Lower</option>
-                                <option value="Full Body">Full Body</option>
+                                <option value="Fullbody">Full Body</option>
+                                <option value="custom">Custom</option>
                             </select>
                         </div>
-                        <label for="hours">How many Hours can you spare for your workouts?</label>
-                        <select name="hours" id="hours">
-                            <option value="1">1</option>
-                            <option value="1-2">1 to 2</option>
-                            <option value="idc">i dont care</option>
-                        </select>
-                        <br>
-        
-                        <label for="goal">What is your primary goal?</label>
-                        <select name="goal" id="goal">
-                            <option value="build muscle">Build Muscle</option>
-                            <option value="lose weight">Lose Weight</option>
-                            <option value="general fitness">General Fitness</option>
-                        </select>
 
                         <button type="button" onclick="generateWorkoutSplit()">Get My Split</button>
                         <div id="result"></div>
@@ -168,8 +143,8 @@
             </div>
         </footer>
     </div>
-    <script src="src/jss/training.js"></script>
-    <script src="src/jss/gener-utils.js"></script>
+    <script src="src/js/training.js"></script>
+    <script src="src/js/gener-utils.js"></script>
 </body>
 
 </html>

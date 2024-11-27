@@ -4,8 +4,8 @@
     <!-- Website Header -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/css/style.css" rel="stylesheet">
-    <link href="src/css/fw.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/fw.css" rel="stylesheet">
     <title>MTN</title>
     <meta name="description" content="test Site">
 </head>
@@ -52,6 +52,6 @@
             ?>
         </div>
     </div>
-    <script src="src/js/fw3.js"></script>
+    <script src="../js/fw3.js"></script>
 </body>
 </html>

@@ -6,8 +6,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             <!--Connection to stylehseet-->
-            <link href="src/css/style.css" rel="stylesheet">
-            <link href="src/css/fw.css" rel="stylesheet">
+            <link href="../css/style.css" rel="stylesheet">
+            <link href="../css/fw.css" rel="stylesheet">
 
             <title>MTN</title>
             <meta name="description" content="test Site">
@@ -30,7 +30,7 @@
                 <!-- aufgabe 2 -->
                 <div class="ball">
                     <?php echo "<h3>would you like to ask our 8-Ball a question?</h3>" ?>
-                    <img src="src/pictures/8boll.png" id="ball-pic">
+                    <img src="../pictures/8boll.png" id="ball-pic">
                     <a href="baller.php">Yesss</a>
                 </div>
             </section>

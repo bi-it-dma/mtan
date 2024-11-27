@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--Connection to stylehseet-->
-        <link href="src/css/style.css" rel="stylesheet">
-        <link href="src/css/fw.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/fw.css" rel="stylesheet">
 
         <title>MTN</title>
         <meta name="description" content="test Site">
@@ -18,7 +18,7 @@
           <input type="text" name="question" placeholder="What is your question?" />
           <input type="submit" value="Ask the Magic 8-Ball" />
         </form>
-        <img src="src/pictures/8boll.png" id="ball-pic">
+        <img src="../pictures/8boll.png" id="ball-pic">
         <p>
             <?php
             if (isset($_POST["question"])) {

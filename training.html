@@ -47,8 +47,8 @@
                 <h2>Why should i exercise?</h2>
                 <p>Besides that Working out helps you with your looks, self esteem, hormonal issues and is a solid hobby. <br>
                     It also has great other great effects on physical and mental health on paper!</p>
-                    <button type="button" class="collapse">Like what?</button>
-                    <div class="collapsed-txt">
+                    <button type="button" onclick="collapse()" class="collapse">Like what?</button>
+                    <div class="collapsable-txt">
                         <p>It can: </p> 
                         <ul id="sect1">
                             <p>(Physical-effects)</p>
@@ -107,9 +107,24 @@
                         <!-- workout day selection -->
                         <label id="days">Select the days you want to work out:</label>
                         <div id="weekday-selector" class="weekday-selector">
-                           <!-- added via js -->
+                            <button onclick="calender()">planning bigger?</button>
+                            <div class="week">
+                                <input type="checkbox" id="monday-week1" name="workoutDays" value="Monday" class="weekday">
+                                <label for="monday-week1">Mon</label>
+                                <input type="checkbox" id="tuesday-week1" name="workoutDays" value="Tuesday" class="weekday">
+                                <label for="tuesday-week1">Tue</label>
+                                <input type="checkbox" id="wednesday-week1" name="workoutDays" value="Wednesday" class="weekday">
+                                <label for="wednesday-week1">Wed</label>
+                                <input type="checkbox" id="thursday-week1" name="workoutDays" value="Thursday" class="weekday">
+                                <label for="thursday-week1">Thu</label>
+                                <input type="checkbox" id="friday-week1" name="workoutDays" value="Friday" class="weekday">
+                                <label for="friday-week1">Fri</label>
+                                <input type="checkbox" id="saturday-week1" name="workoutDays" value="Saturday" class="weekday">
+                                <label for="saturday-week1">Sat</label>
+                                <input type="checkbox" id="sunday-week1" name="workoutDays" value="Sunday" class="weekday">
+                                <label for="sunday-week1">Sun</label>
+                            </div>
                         </div>
-                        <button id="toggle-view">Switch to Month View</button> <br>
 
                         <!-- split preference -->
                         <label for="split-preference">What Split do you prefer?</label>

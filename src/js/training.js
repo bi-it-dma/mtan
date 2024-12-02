@@ -1,3 +1,7 @@
+// window.onload{
+//     let month = document.getElementById("month")   
+//    }
+   
 let pop_splits = {
     "PPL": ['"Push" = Chest, Shoulders, Triceps,' ,'"Pull" = Back, Biceps', "Legs"],
     "Arnold": ["Chest, Back, Abs", "Shoulders, Arms, Abs", "Legs, Calfs, Abs" ],
@@ -59,41 +63,17 @@ const table = document.getElementById("example-splits");
 // Call the function to populate on page load or button click
 populateTable();
 
-//generate weekday selector with dates
+//keep this for later
+
 // Get the current date
 const today = new Date();
 
 // Array of weekdays
 const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-// Create the weekday-selector content
-const weekdaySelector = document.getElementById("weekday-selector");
-
-weekdays.forEach((day, index) => {
-    // Calculate the date for each weekday
-    const currentDate = new Date(today);
-    currentDate.setDate(today.getDate() + (index - today.getDay() + 1 + 7) % 7); // Align the dates to the correct weekdays
-    const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}`; // Format day/month
-
-    // Create the checkbox
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = day.toLowerCase();
-    checkbox.name = "workoutDays";
-    checkbox.value = day;
-    checkbox.classList.add("weekday");
-
-    // Create the label with the date
-    const label = document.createElement("label");
-    label.htmlFor = day.toLowerCase();
-    label.textContent = `${day.slice(0, 3)} (${formattedDate})`;
-
-    // Append the elements
-    weekdaySelector.appendChild(checkbox);
-    weekdaySelector.appendChild(label);
-});
-
-
+function calender{
+    
+}
 // Workout Plan Generator
 function generateWorkoutSplit() {
     let splitPref = document.getElementById('split-preference').value;

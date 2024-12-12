@@ -1,24 +1,22 @@
-// window.onload{
-//     let month = document.getElementById("month")   
-//    }
-   
+let currentView = 'week'; // Track the current view (week or month)
+
 let pop_splits = {
-    "PPL": ['"Push" = Chest, Shoulders, Triceps,' ,'"Pull" = Back, Biceps', "Legs"],
-    "Arnold": ["Chest, Back, Abs", "Shoulders, Arms, Abs", "Legs, Calfs, Abs" ],
+    "PPL": ['"Push" = Chest, Shoulders, Triceps', '"Pull" = Back, Biceps', "Legs"],
+    "Arnold": ["Chest, Back, Abs", "Shoulders, Arms, Abs", "Legs, Calfs, Abs"],
     "Fullbody": ["Fullbody"],
     "Upper/Lower": ["Upper A", "Lower A", "Upper B", "Lower B"]
 };
 
+// Function to populate a table on training.html with example split
 function populateTable() {
-const table = document.getElementById("example-splits");
-
-    // Define template with pre-filled rest Days (this assumes the 7 columns for each day)
+    const table = document.getElementById("example-splits");
     const template = [
         ["", "", "", "Rest", "", "", ""],
         ["", "", "", "", "", "", "Rest"],
-        ["","Rest", "", "Rest", "", "Rest", "Rest"],
+        ["", "Rest", "", "Rest", "", "Rest", "Rest"],
         ["", "", "Rest", "Rest", "", "", ""]
     ];
+
     // Table header row
     table.innerHTML = `
         <tr>
@@ -34,46 +32,35 @@ const table = document.getElementById("example-splits");
     `;
 
     // Populate each workout split with the template for rest Days
-    let splitIndex = 0;
+    let splitIndex = 0; // Initialize splitIndex here
     for (let split in pop_splits) {
-        // Create a new row for each split
         let row = table.insertRow();
-        let cell = row.insertCell();
-        cell.innerText = split;
+        row.insertCell().innerText = split;
 
-        // Get the workout Days for the split
         let dayPlans = pop_splits[split];
-        let workoutIndex = 0;
-
         for (let i = 0; i < 7; i++) {
             let dayCell = row.insertCell();
             if (template[splitIndex][i] === "Rest") {
                 dayCell.innerText = "Rest";
             } else {
-                // Fill with workout day and loop back to the start of the workout Days if needed
-                dayCell.innerText = dayPlans[workoutIndex % dayPlans.length];
-                workoutIndex++;
+                dayCell.innerText = dayPlans[i % dayPlans.length];
             }
         }
-
-        splitIndex++;
+        splitIndex++; // Increment splitIndex for the next split
     }
 }
 
 // Call the function to populate on page load or button click
 populateTable();
 
-//keep this for later
-
-// Get the current date
-const today = new Date();
-
-// Array of weekdays
-const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-function calender{
-    
+// Function to create CSV from table HTML
+function createCSV(tableHTML) {
+    let rows = tableHTML.match(/<tr>(.*?)<\/tr>/g).map(row => 
+        row.replace(/<\/?(tr|td|th)>/g, '').split('</td><td>').join(',')
+    );
+    return rows.join('\n');
 }
+
 // Workout Plan Generator
 function generateWorkoutSplit() {
     let splitPref = document.getElementById('split-preference').value;
@@ -84,7 +71,7 @@ function generateWorkoutSplit() {
         return;
     }
 
-    let result = suggestSplit(splitPref, selectedDays);
+    let result = currentView === 'week' ? generatePlan(splitPref, selectedDays, 'week') : generatePlan(splitPref, selectedDays, 'month');
 
     // Display result table
     document.getElementById('result').innerHTML = result;
@@ -98,27 +85,34 @@ function generateWorkoutSplit() {
     document.getElementById('result').appendChild(downloadButton);
 }
 
-function suggestSplit(splitPref, selectedDays) {
+function generatePlan(splitPref, selectedDays, type) {
+    let tableHTML = '<table><tr><th>' + (type === 'week' ? 'Day' : 'Date') + '</th><th>Workout</th></tr>';
     let allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     let workoutIndex = 0;
-    let tableHTML = '<table><tr><th>Day</th><th>Workout</th></tr>';
 
-    allDays.forEach(day => {
-        if (selectedDays.includes(day)) {
-            tableHTML += `<tr><td>${day}</td><td>${pop_splits[splitPref][workoutIndex]}</td></tr>`;
-            workoutIndex = (workoutIndex + 1) % pop_splits[splitPref].length;
-        } else {
-            tableHTML += `<tr><td>${day}</td><td>Rest Day</td></tr>`;
+    if (type === 'week') {
+        allDays.forEach(day => {
+            if (selectedDays.includes(day)) {
+                tableHTML += `<tr><td>${day}</td><td>${pop_splits[splitPref][workoutIndex]}</td></tr>`;
+                workoutIndex = (workoutIndex + 1) % pop_splits[splitPref].length;
+            } else {
+                tableHTML += `<tr><td>${day}</td><td>Rest Day</td></tr>`;
+            }
+        });
+    } else if (type === 'month') {
+        let monthDays = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+        for (let day = 1; day <= monthDays; day++) {
+            let date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+            let dayName = date.toLocaleString('default', { weekday: 'long' });
+
+            if (selectedDays.includes(dayName)) {
+                tableHTML += `<tr><td>${date.toDateString()}</td><td>${pop_splits[splitPref][day % pop_splits[splitPref].length]}</td></tr>`;
+            } else {
+                tableHTML += `<tr><td>${date.toDateString()}</td><td>Rest Day</td></tr>`;
+            }
         }
-    });
+    }
 
     tableHTML += '</table>';
     return tableHTML;
-}
-
-function createCSV(tableHTML) {
-    let rows = tableHTML.match(/<tr>(.*?)<\/tr>/g).map(row => 
-        row.replace(/<\/?(tr|td|th)>/g, '').split('</td><td>').join(',')
-    );
-    return rows.join('\n');
 }
